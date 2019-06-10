@@ -1,7 +1,7 @@
 import random
 
 print ('We will play hangman game !')
-raw_input('Press Enter to start !\n')
+input('Press Enter to start !\n')
 
 # create clear screen function
 def clearScreen():
@@ -47,20 +47,20 @@ while fault != 11 and word != ''.join(fund):
     clearScreen()
 
     # print the hangman's draw
-    print diagram[fault]
+    print (diagram[fault])
 
     # print the word without unfund char
-    print ' '.join(fund)
+    print (' '.join(fund))
 
     # asking for char
-    c = raw_input('Give me a letter !\n')
+    c = input('Give me a letter !\n')
 
     # refuse char if he was already used or if it's a string
     while len(c) != 1 or c in used:
         if c in used:
-            c = raw_input('You\'ve already used this char !\n')
+            c = input('You\'ve already used this char !\n')
         else:
-            c = raw_input('"' + c + '"' + ' is not a char. Give me one !\n')
+            c = input('"' + c + '"' + ' is not a char. Give me one !\n')
 
 
     # add the used char to the used char list
@@ -81,11 +81,11 @@ while fault != 11 and word != ''.join(fund):
 clearScreen()
 
 # draw the score
-print diagram[fault]
-print ' '.join(fund)
+print (diagram[fault])
+print (' '.join(fund))
 
 # check if win
 if fault == 11:
-    raw_input( 'You lost ! Press Enter to quit !')
+    input( 'You lost ! Press Enter to quit !')
 else:
-    raw_input('You win ! Press Enter to quit !')
+    input('You win ! Press Enter to quit !')
